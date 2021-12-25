@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="750">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="width=750,target-densitydpi=device-dpi,maximum-scale=1.0, user-scalable=no">
+		<script>
+			function setWidth(a){if(/Andriod/i.test(navigator.userAgent)){var c,b=window.innerWidth;(b!=a)&&(c=b/a),document.addEventListener("DOMContentLoaded",function(){var d = document.getElementsByTagName("body")[0];d.style.webkitTransformOrigin = "left top";d.style.webkitTransform="scale("+c+")"},!1)}}setWidth(750);
+		</script>
+		<title>防伪查询</title>
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="wrapper">
+			<img src="images/fangwei.jpg" alt="anti-counterfeiting">
+			<div class="box mt-30">
+				<p class="size28 bold">Reminder</p>
+				<p>(Please scrape the coating and enter the complete anti-counterfeiting code)</p>
+				<div class="content">
+					<div class="input">
+						<input type="text" id="fwcode" placeholder="Please enter anti-counterfeiting code">
+					</div>
+					<div class="btn">
+						<button type="submit" id="search">search</button>				
+					</div>
+					<div class="text">
+						<P class="size28 bold mb-20 t-center">Query results</P>
+						<p>The products you purchased are authentic products of MOLYVIVI brand. Thank you for your support!</p>
+						<p class="mt-20"><b>Anti fake record:</b></p>
+						<p>Query Time：<span class="date"></span></p>
+						<p>Number Of Queries：<span class="count"></span></p>
+						<p>First Query Time：<span class="first"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script>
+			function queryfw() {
+                var code = $("#fwcode").val();
+				console.log(code)
+                $.post('http://kxn.315mao.com/index.php/Home/Fwinterface/fwcode',{fwcode:code},function(data){					
+					var dataCode = data.code
+					if(dataCode==200){
+						$('.text').show(200)
+						$('.date').html(data.data[0].time)
+						$('.count').html(data.data.count)
+						$('.first').html(data.data.first)
+					}else{
+						alert(data.msg)
+					}					
+	                if(data == 'error'){
+	                 	alert('未知错误!');
+	                }
+					console.log(data)
+            	});
+            }			
+			$("#search").click(function(){
+				queryfw()
+			});
+		</script>
+	</body>
+</html>

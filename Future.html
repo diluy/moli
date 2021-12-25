@@ -1,0 +1,105 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="keywords" content="魔力薇薇"/>
+    <meta name="description" content="魔力薇薇"/>
+    <link rel="shortcut icon" href="images/favicon.ico">    	
+    <link data-n-head="true" rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <title>魔力薇薇</title>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/web.js"></script>
+</head>
+<body>
+<div class="homeHead">
+    <div class="header">
+        
+        <a href="index.html" class="logo"><img src="images/logo.png" /></a>
+        <a href="javascript:;" class="navOpen"><i></i></a>
+        <div class="nav">
+            <ul>
+                <li ><a href="index.html">首页</a></li>
+                <li ><a href="Story.html">品牌故事</a></li>
+                <li ><a href="Advantage.html">品牌优势</a></li>
+                <li ><a href="Qualification.html">资质认证</a></li>
+                <li ><a href="Product.html">产品介绍</a></li>
+                <li class="active"><a href="Future.html">前景展望</a></li>
+                <li ><a href="Contact.html">联系我们</a></li>
+            </ul>
+            <a href="javascript:;" class="navClose"><i></i></a>
+        </div>
+    </div>
+</div>
+
+
+<div class="homeBg">
+    <div class="pageBanner" style="background-image:url(upload/image/20200330/5e819cdabc964.jpg);">
+        <div class="k1300">
+            <div class="pageBannerMain" style=" margin-left: auto;">
+                <div class="pageBannerMainPad tc">
+                    <div class="pageBannerLogo"><img src="images/logo.png" /></div>
+                    <h2>前景展望</h2><h3>推动世界发展</h3><p>Promoting World Development</p>                </div>
+                <div class=""><img src="images/pt4.png" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pageMain">
+    <div class="k1300"><div class="row"><div class="boxHead tc"><p style="text-align: center;">What’s the future of the technology apparel？</p><h2 style="text-align: center;">科技服饰的<span style="color: red;">发展前景</span> ？</h2></div><div class="boxMain"><div class="boxText"><p style="text-align: center;">创新科技，是推动世界发展的第一动力，几乎每个行业的发展，都与科技的进步有密切的关系。</p><p style="text-align: center;">当下，众多传统服装企业都在寻找新突破，随着科技化进程的加速，越来越多的服装加入科技化的元素。</p><p style="text-align: center;">科技服饰行业是全球智能面料行业中增速最快，最具市场潜力的新型新兴行业。</p><p style="text-align: center;">这将是服装企业新的战略落地点，抓住这个风口，就为未来的服装品牌转型与未来消费者的需求提前落下了一科重要的棋子。</p><p style="text-align: center;">更有专家预测，在未来10年，全球有70%以上的纺织品都会加入科技元素。</p><p style="text-align: center;">但中国市场，目前确是一片空白，产品也多是噱头大于使用。</p><p style="text-align: center;">Molyvivi在这方面具备了极大的优势以及发展潜力。</p></div><div class="pt20"><img src="http://img10.360buyimg.com/cms/jfs/t1/110579/9/10812/317158/5e818ceeEe20f0677/540abef2c2f07524.jpg" width="1311" height="882" border="0" vspace="0" title="" alt="" style="width: 1311px; height: 882px;"/></div></div></div></div>
+<div class="footMain">
+    <div class="k1300 clearfix">
+        <div class="footInfo">
+            <div class="footLogo"><a href="index.html"><img src="images/logo.png" /></a></div>
+            <p>魔力薇薇（上海）服饰科技有限公司</p><p>地址：上海市闵行区新龙路1333弄28号31幢616</p><p>电话：021-64026780</p><p>邮箱：<a "http://www.molyvivi.com/href" target="_blank" rel="noopener noreferrer"><span style="color:#fff">service@molyvivi.com</span></a></p><p><br/></p>        </div>
+        <div class="footList">
+            <ul class="clearfix">
+                <li>
+                    <div class="footListPad">
+                        <img src="images/ewm.gif" />
+                        <p>微信公众号</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="footListPad">
+                        <img src="images/ewm.gif" />
+                        <p>官方微信</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    © 2019 Molyvivi All Rights &nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn/" target="_blank">沪ICP备20006849号</a> &nbsp;&nbsp;<a href="http://molyvivi.com/antifake/" target="_blank">防伪查询</a>
+</div>
+</div>
+<script>
+    resizeBannerImage()
+    window.onresize=resizeBannerImage;//当窗口改变宽度时执行此函数
+    function resizeBannerImage(){
+        var winH = window.innerHeight;
+        $('.pageMain').css({
+            marginTop:winH
+        })
+    }
+
+    function setlan(lan) {
+        if (lan == 'en' || lan == 'zh') {
+            $.post('/Future/setlan', {lan: lan}, function (result) {
+                if (result.status == 100) {
+                    window.location.reload();
+                }
+            }, 'json');
+        }
+    }
+
+</script>
+</body>
+</html>l>

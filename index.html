@@ -1,0 +1,114 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="keywords" content="魔力薇薇"/>
+    <meta name="description" content="魔力薇薇"/>
+    <title>魔力薇薇</title>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/web.js"></script>
+</head>
+<body>
+<div class="homeHead">
+    <div class="header">
+        
+        <a href="index.html" class="logo"><img src="images/logo.png" /></a>
+        <a href="javascript:;" class="navOpen"><i></i></a>
+        <div class="nav">
+            <ul>
+                <li class="active"><a href="index.html">首页</a></li>
+                <li ><a href="Story.html">品牌故事</a></li>
+                <li ><a href="Advantage.html">品牌优势</a></li>
+                <li ><a href="Qualification.html">资质认证</a></li>
+                <li ><a href="Product.html">产品介绍</a></li>
+                <li ><a href="Future.html">前景展望</a></li>
+                <li ><a href="Contact.html">联系我们</a></li>
+            </ul>
+            <a href="javascript:;" class="navClose"><i></i></a>
+        </div>
+    </div>
+</div>
+<div class="homeBg">
+    <div class="homeFoot">
+        <div class="footer">
+            © 2019 Molyvivi All Rights &nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn/" target="_blank">沪ICP备20006849号</a> &nbsp;&nbsp;<a href="antifake/index.html" target="_blank">防伪查询</a>
+        </div>
+    </div>
+    <div class="homeHain">
+        <div class="k1300">
+            <div class="ht1"><img src="images/ht1.png" /></div>
+            <div class="homeBox clearfix">
+                <div class="homeBoxSpan">
+                    <div class="swiper-container newPic">
+                        <div class="swiper-wrapper">
+                                                    </div>
+                    </div>
+                </div>
+                <div class="homeBoxSpan">
+                    <div class="homeBoxMain">
+                        <div class="homeBoxText"><img src="images/ht3.png" /></div>
+                        <div class="homeBoxFoot">
+                            <a href="javascript:;" onmousedown="$(this).attr('href', $('.swiper-slide-duplicate-active').find('img').attr('data'));" class="moreBtn"><span>了解更多</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ht2"><img src="images/ht2.png" /></div>
+        </div>
+    </div>
+    <div class="homeBanner swiper-container">
+        <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background-image:url(upload/image/20210331/6063e5a6bd685.jpeg)"></div>
+                    </div>
+    </div>
+</div>
+<script>
+    var swiper = new Swiper('.homeBanner', {
+        //spaceBetween: 50,
+        effect: 'fade',
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+
+    var newSwiper = new Swiper('.newPic', {
+        effect: 'cube',
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+    });
+
+    function setlan(lan) {
+        if (lan == 'en' || lan == 'zh') {
+            $.post('/Index/setlan', {lan: lan}, function (result) {
+                if (result.status == 100) {
+                    window.location.reload();
+                }
+            }, 'json');
+        }
+    }
+
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-200003367-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-200003367-1');
+</script>
+
+</body>
+</html>
